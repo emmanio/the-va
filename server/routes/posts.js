@@ -7,32 +7,32 @@ const db = require('../db/posts')
 
 router.get(
   '/',
-  verifyJwt({ secret: process.env.JWT_SECRET }),
+  verifyJwt({secret: process.env.JWT_SECRET}),
   getPosts
 )
 
 // Secure route.
 router.get(
   '/user',
-  verifyJwt({ secret: process.env.JWT_SECRET }),
+  verifyJwt({secret: process.env.JWT_SECRET}),
   getUserPosts
 )
 
 router.get(
   '/:id',
-  verifyJwt({ secret: process.env.JWT_SECRET }),
+  verifyJwt({secret: process.env.JWT_SECRET}),
   getReplies
 )
 
 router.post(
   '/',
-  verifyJwt({ secret: process.env.JWT_SECRET }),
+  verifyJwt({secret: process.env.JWT_SECRET}),
   submitPost
 )
 
 router.post(
   '/reply',
-  verifyJwt({ secret: process.env.JWT_SECRET }),
+  verifyJwt({secret: process.env.JWT_SECRET}),
   submitReply
 )
 
@@ -49,7 +49,7 @@ function getPosts (req, res) {
 // Secure route.
 router.get(
   '/user',
-  verifyJwt({ secret: process.env.JWT_SECRET }),
+  verifyJwt({secret: process.env.JWT_SECRET}),
   getUserPosts
 )
 

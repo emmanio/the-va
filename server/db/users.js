@@ -31,8 +31,8 @@ function createNewUser (username, password, db = connection) {
   return generateHash(password)
     .then(hash => {
       return db('users')
-      .insert({username, password_hash: hash})
-      .returning('id')
+        .insert({username, password_hash: hash})
+        .returning('id')
     })
 }
 
